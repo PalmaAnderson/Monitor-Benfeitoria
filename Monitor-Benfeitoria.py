@@ -2,7 +2,8 @@ import urllib.request
 import json
 from pprint import pprint
 import winsound
-import time
+import time,sys
+from time import gmtime, strftime
 
 
 oldMoney = 0
@@ -29,10 +30,11 @@ while (1):
     money= proc(str(resp), locate)
     #print ("money = ")
     if money != oldMoney:
-        print ("Nova DoaCao")
+        print ("Nova Doação !!!")
         playSound()
+        time.sleep( 5 )
         
-    print (money)
-        
+    print ("R$" + money + strftime("em %H:%M:%S de %d/%m/%Y"))    
     oldMoney = money
-    time.sleep( 10 )
+    time.sleep( 0 )
+
